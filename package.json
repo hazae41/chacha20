@@ -1,0 +1,38 @@
+{
+  "type": "module",
+  "name": "@hazae41/chacha20",
+  "version": "2.0.8",
+  "description": "ChaCha20 adapter for WebAssembly and JS implementations",
+  "repository": "github:hazae41/chacha20",
+  "author": "hazae41",
+  "scripts": {
+    "examine": "deno lint ./src && deno check ./src && deno test ./src",
+    "prepack": "rm -rf ./out && tsc && tscousin"
+  },
+  "files": [
+    "./out"
+  ],
+  "exports": {
+    ".": {
+      "types": "./out/mod.d.ts",
+      "import": "./out/mod.js"
+    }
+  },
+  "devDependencies": {
+    "@hazae41/phobos": "^2.0.16",
+    "@hazae41/tscousin": "^1.0.28",
+    "typescript": "^6.0.3"
+  },
+  "keywords": [
+    "chacha20",
+    "crypto",
+    "cryptography",
+    "adapter",
+    "typescript",
+    "esmodules"
+  ],
+  "dependencies": {
+    "@hazae41/result-and-option": "^2.0.10",
+    "@hazae41/chacha20poly1305-wasm": "^2.0.4"
+  }
+}
