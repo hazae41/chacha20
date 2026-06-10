@@ -33,6 +33,6 @@
   ],
   "dependencies": {
     "@hazae41/result-and-option": "^2.0.10",
-    "@hazae41/chacha20poly1305-wasm": "^2.0.4"
+    "@hazae41/chacha20-wasm": "^2.0.0"
   }
 }

@@ -1,6 +1,6 @@
-import { chaCha20Poly1305Wasm } from "@hazae41/chacha20poly1305-wasm";
+import { ChaCha20Cipher, load, Memory } from "@hazae41/chacha20-wasm";
 
-await chaCha20Poly1305Wasm.load()
+await load()
 
 export class Cipher {
 
@@ -9,7 +9,7 @@ export class Cipher {
    * @param inner 
    */
   constructor(
-    readonly inner: chaCha20Poly1305Wasm.ChaCha20Cipher
+    readonly inner: ChaCha20Cipher
   ) { }
 
   /**
@@ -19,11 +19,7 @@ export class Cipher {
    * @returns 
    */
   static import(key: Uint8Array, nonce: Uint8Array): Cipher {
-    const { Memory, ChaCha20Cipher } = chaCha20Poly1305Wasm
-
-    const inner = new ChaCha20Cipher(new Memory(key), new Memory(nonce))
-
-    return new Cipher(inner)
+    return new Cipher(new ChaCha20Cipher(new Memory(key), new Memory(nonce)))
   }
 
   seek(position: number) {
@@ -31,8 +27,6 @@ export class Cipher {
   }
 
   feed(data: Uint8Array) {
-    const { Memory } = chaCha20Poly1305Wasm
-
     const memory = new Memory(data)
 
     this.inner.apply_keystream(memory)
