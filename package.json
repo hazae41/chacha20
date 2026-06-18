@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@hazae41/chacha20",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ChaCha20 for the web",
   "repository": "github:hazae41/chacha20",
   "author": "hazae41",
