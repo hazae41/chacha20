@@ -2,7 +2,7 @@
   "type": "module",
   "name": "@hazae41/chacha20",
   "version": "1.0.1",
-  "description": "ChaCha20 adapter for WebAssembly and JS implementations",
+  "description": "ChaCha20 for the web",
   "repository": "github:hazae41/chacha20",
   "author": "hazae41",
   "scripts": {
@@ -32,7 +32,6 @@
     "esmodules"
   ],
   "dependencies": {
-    "@hazae41/result-and-option": "^2.0.10",
     "@hazae41/chacha20-wasm": "^2.0.0"
   }
 }
